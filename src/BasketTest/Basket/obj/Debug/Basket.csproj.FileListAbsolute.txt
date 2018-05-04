@@ -1,0 +1,6 @@
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\BasketTest\Basket\bin\Debug\Basket.dll
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\BasketTest\Basket\bin\Debug\Basket.pdb
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\BasketTest\Basket\obj\Debug\Basket.csprojResolveAssemblyReference.cache
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\BasketTest\Basket\obj\Debug\Basket.csproj.CoreCompileInputs.cache
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\BasketTest\Basket\obj\Debug\Basket.dll
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\BasketTest\Basket\obj\Debug\Basket.pdb
