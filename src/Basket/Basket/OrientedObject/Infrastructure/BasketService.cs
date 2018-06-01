@@ -10,20 +10,24 @@ namespace Basket.OrientedObject.Infrastructure {
 
     public class BasketService
     {
-        public Basket1 GetBasket(IList<BasketLineArticle> basketLineArticles)
+        public Domain.Basket GetBasket(IList<BasketLineArticle> basketLineArticles)
         {
             var list = new List<BasketLine>();
+            int i = 0;
             foreach (var basketLineArticle in basketLineArticles)
             {
                 // cahrge articleDatabase depuis la bdd
-                
+                ArticleDatabase db = GetArticleDatabase(basketLineArticle.Id);
+                list.Add(new BasketLine(new  Article(db.Price, db.Category), i));
+                i++;
+                //list.Add(db);
                 // map artcle du domaine métier
             }
-            return new Basket1(list);
+            return new Domain.Basket(list);
         }
         
          
-        public static ArticleDatabase GetArticleDatabase(string id)        
+        public ArticleDatabase GetArticleDatabase(string id)        
         {  
             var codeBase = Assembly.GetExecutingAssembly().CodeBase; 
             var uri = new UriBuilder(codeBase);                 

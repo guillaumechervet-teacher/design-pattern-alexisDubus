@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Basket.OrientedObject.Domain
 {
-    public class Basket1
+    public class Basket
     {
         private readonly IList<BasketLine> _basketLine;
 
-        public Basket1(IList<BasketLine> basketLine)
+        public Basket(IList<BasketLine> basketLine)
         {
             _basketLine = basketLine;
         }
