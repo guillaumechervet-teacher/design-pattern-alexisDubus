@@ -1,0 +1,16 @@
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\bin\Debug\netstandard2.0\Basket.deps.json
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\bin\Debug\netstandard2.0\Basket.dll
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\bin\Debug\netstandard2.0\Basket.pdb
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.csproj.CoreCompileInputs.cache
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.AssemblyInfoInputs.cache
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.AssemblyInfo.cs
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.dll
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus1\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.pdb
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\bin\Debug\netstandard2.0\Basket.deps.json
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\bin\Debug\netstandard2.0\Basket.dll
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\bin\Debug\netstandard2.0\Basket.pdb
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.csproj.CoreCompileInputs.cache
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.AssemblyInfoInputs.cache
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.AssemblyInfo.cs
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.dll
+D:\EPSI\B3\Dev\Design Patern\TP\design-pattern-alexisDubus\src\Basket\Basket\obj\Debug\netstandard2.0\Basket.pdb
