@@ -20,6 +20,17 @@
             </e>
           </e>
         </e>
+        <e p="OrientedObject" t="Include">
+          <e p="BasketOperation.cs" t="Include" />
+          <e p="Domain" t="Include">
+            <e p="Article.cs" t="Include" />
+            <e p="Basket.cs" t="Include" />
+            <e p="BasketLine.cs" t="Include" />
+          </e>
+          <e p="Infrastructure" t="Include">
+            <e p="BasketService.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Basket.sln" t="IncludeFlat" />
       <e p="BasketTest" t="IncludeRecursive">
