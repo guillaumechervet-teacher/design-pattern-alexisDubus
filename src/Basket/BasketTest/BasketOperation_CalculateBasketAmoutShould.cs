@@ -6,7 +6,6 @@ using System.Reflection;
 using Basket;
 using Basket.OrientedObject;
 using Basket.OrientedObject.Infrastructure;
-using Basket.OrientedObject.Interface;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 
@@ -98,6 +97,18 @@ namespace BasketTest
             var amountTotal = basketOperation.CalculateAmout(basketTest.BasketLineArticles);
             Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
         }
+
+        [TestMethod]
+        public void ReturnCorrectAmoutGivenBasketLine(BasketTest basketTest)
+        {
+            var basketLineArticle = new BasketLineArticle {Id = "4", Number = 2, Label = "Grumy"};
+            var basKetService = new BasketService(new ArticleDatabaseMock());
+            var basketOperation = new BasketOperation(basKetService);
+            var amountTotal = basketOperation.CalculateAmout(basketTest.BasketLineArticles);
+            Assert.AreEqual(amountTotal, 8640);
+        }
+
+        
 
         public class BasketTest
         {

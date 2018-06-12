@@ -24,6 +24,8 @@
           <e p="BasketOperation.cs" t="Include" />
           <e p="Domain" t="Include">
             <e p="Article.cs" t="Include" />
+            <e p="ArticleBase.cs" t="Include" />
+            <e p="ArticleFood.cs" t="Include" />
             <e p="Basket.cs" t="Include" />
             <e p="BasketLine.cs" t="Include" />
           </e>
