@@ -10,6 +10,13 @@ namespace Basket.OrientedObject.Infrastructure {
 
     public class BasketService
     {
+        private ArticleDatabaseJson db;
+        
+        public BasketService(ArticleDatabaseJson db)
+        {
+            this.db = db;
+        }
+        
         public Domain.Basket GetBasket(IList<BasketLineArticle> basketLineArticles)
         {
             var list = new List<BasketLine>();
@@ -17,7 +24,7 @@ namespace Basket.OrientedObject.Infrastructure {
             foreach (var basketLineArticle in basketLineArticles)
             {
                 // cahrge articleDatabase depuis la bdd
-                ArticleDatabase db = GetArticleDatabase(basketLineArticle.Id);
+                ArticleDatabase db = this.db.GetArticle(basketLineArticle.Id);
                 list.Add(new BasketLine(new  Article(db.Price, db.Category), i));
                 i++;
                 //list.Add(db);

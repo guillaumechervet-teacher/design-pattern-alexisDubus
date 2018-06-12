@@ -29,7 +29,11 @@
           </e>
           <e p="Infrastructure" t="Include">
             <e p="ArticleDatabaseJson.cs" t="Include" />
+            <e p="ArticleDatabaseMock.cs" t="Include" />
             <e p="BasketService.cs" t="Include" />
+          </e>
+          <e p="Interface" t="Include">
+            <e p="IArticleDatabase.cs" t="Include" />
           </e>
         </e>
       </e>
