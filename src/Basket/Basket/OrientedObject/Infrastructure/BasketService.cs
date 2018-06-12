@@ -4,15 +4,16 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Basket.OrientedObject.Domain;
+using Basket.OrientedObject.Interface;
 using Newtonsoft.Json;
 
 namespace Basket.OrientedObject.Infrastructure
 {
     public class BasketService
     {
-        private readonly ArticleDatabaseJson db;
+        private readonly IArticleDatabase db;
 
-        public BasketService(ArticleDatabaseJson db)
+        public BasketService(IArticleDatabase db)
         {
             this.db = db;
         }
