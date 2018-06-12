@@ -3,5 +3,5 @@
     public interface IArticleDatabase
     {
         ArticleDatabase GetArticle(string id);
-    } 
+    }
 }

@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
-using Basket.OrientedObject.Domain;
+using Basket.OrientedObject.Infrastructure;
 
 namespace Basket.OrientedObject
 {
-    public class BasketOperation     {     
-        private readonly Infrastructure.BasketService _basketService;
+    public class BasketOperation
+    {
+        private readonly BasketService _basketService;
 
-        public BasketOperation(Infrastructure.BasketService basketService)
+        public BasketOperation(BasketService basketService)
         {
             _basketService = basketService;
-        } 
- 
-        public int CalculateAmout(IList<BasketLineArticle>  basketLineArticles)        
-        {             
-            Domain.Basket basket = _basketService.GetBasket(basketLineArticles);             
-            return basket.Calculate();         
-        }     
-    } 
-} 
+        }
+
+        public int CalculateAmout(IList<BasketLineArticle> basketLineArticles)
+        {
+            var basket = _basketService.GetBasket(basketLineArticles);
+            return basket.Calculate();
+        }
+    }
+}

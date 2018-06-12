@@ -8,7 +8,6 @@ namespace BasketTest
         [TestMethod]
         public void TestMethod1()
         {
-            
         }
     }
 }

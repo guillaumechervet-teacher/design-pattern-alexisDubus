@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Basket.OrientedObject.Domain
 {
@@ -15,13 +14,9 @@ namespace Basket.OrientedObject.Domain
         public int Calculate()
         {
             var total = 0;
-            foreach (var basketLine in _basketLine)
-            {
-                total += basketLine.Calculate();
-            }
+            foreach (var basketLine in _basketLine) total += basketLine.Calculate();
 
             return total;
         }
-        
     }
 }

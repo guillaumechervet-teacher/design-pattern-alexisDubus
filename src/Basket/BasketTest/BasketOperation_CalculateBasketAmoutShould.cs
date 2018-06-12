@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using Basket;
 using Basket.OrientedObject;
 using Basket.OrientedObject.Infrastructure;
@@ -48,7 +47,55 @@ namespace BasketTest
         public void ReturnCorrectAmoutGivenBasket1(BasketTest basketTest)
         {
             var amountTotal = 0;
-            Assert.AreEqual(amountTotal, basketTest.ExpectedPrice); 
+            Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
+        }
+
+        [TestMethod]
+        [DynamicData("Baskets")]
+        public void ReturnCorrectAmoutGivenBasket(BasketTest basketTest)
+        {
+            var amountTotal = 0;
+            foreach (var basketLineArticle in basketTest.BasketLineArticles)
+            {
+                // Retrive article from database
+                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                var uri = new UriBuilder(codeBase);
+                var path = Uri.UnescapeDataString(uri.Path);
+                var assemblyDirectory = Path.GetDirectoryName(path);
+                var jsonPath = Path.Combine(assemblyDirectory, "articledatabase.json");
+                IList<ArticleDatabase> articleDatabases =
+                    JsonConvert.DeserializeObject<List<ArticleDatabase>>(File.ReadAllText(jsonPath));
+                var article = articleDatabases.First(articleDatabase => articleDatabase.Id == basketLineArticle.Id);
+
+                // Calculate amount
+                var amount = 0;
+                switch (article.Category)
+                {
+                    case "food":
+                        amount += article.Price * 100 + article.Price * 12;
+                        break;
+                    case "electronic":
+                        amount += article.Price * 100 + article.Price * 20 + 4;
+                        break;
+                    case "desktop":
+                        amount += article.Price * 100 + article.Price * 20;
+                        break;
+                }
+
+                amountTotal += amount * basketLineArticle.Number;
+            }
+
+            Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
+        }
+
+        [TestMethod]
+        [DynamicData("Baskets")]
+        public void ReturnCorrectAmoutGivenBasketBis(BasketTest basketTest)
+        {
+            var basKetService = new BasketService(new ArticleDatabaseJson());
+            var basketOperation = new BasketOperation(basKetService);
+            var amountTotal = basketOperation.CalculateAmout(basketTest.BasketLineArticles);
+            Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
         }
 
         public class BasketTest
@@ -56,50 +103,5 @@ namespace BasketTest
             public List<BasketLineArticle> BasketLineArticles { get; set; }
             public int ExpectedPrice { get; set; }
         }
-        [TestMethod]         
-        [DynamicData("Baskets")]        
-        public void ReturnCorrectAmoutGivenBasket(BasketTest basketTest)         
-        {             
-            var amountTotal = 0;            
-            foreach (var basketLineArticle in basketTest.BasketLineArticles)             {     
-                // Retrive article from database
-                var codeBase = Assembly.GetExecutingAssembly().CodeBase;             
-                var uri = new UriBuilder(codeBase);                 
-                var path = Uri.UnescapeDataString(uri.Path);   
-                var assemblyDirectory = Path.GetDirectoryName(path);     
-                var jsonPath = Path.Combine(assemblyDirectory, "articledatabase.json");        
-                IList<ArticleDatabase> articleDatabases = JsonConvert.DeserializeObject<List<ArticleDatabase>>(File.ReadAllText(jsonPath));  
-                var article = articleDatabases.First(articleDatabase => articleDatabase.Id == basketLineArticle.Id); 
- 
-            // Calculate amount
-            var amount = 0;              
-                switch (article.Category)                
-                {
-            case "food":                         amount += article.Price * 100 + article.Price * 12;                        
-                break;                     case "electronic":                  
-                        amount += article.Price * 100 + article.Price * 20 + 4;    
-                        break; 
-            case "desktop":                        
-                amount += article.Price * 100 + article.Price * 20;                       
-                break;
-                    
-                }          
-                amountTotal += amount * basketLineArticle.Number;
-                
-            } 
- 
-        Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
-            
-        }
-
-        [TestMethod]
-        [DynamicData("Baskets")]
-        public void ReturnCorrectAmoutGivenBasketBis(BasketTest basketTest)
-        {
-            var basKetService = new BasketService(new ArticleDatabaseJson());          
-            var basketOperation = new BasketOperation(basKetService);      
-            var amountTotal = basketOperation.CalculateAmout(basketTest.BasketLineArticles);      
-            Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
-        } 
     }
 }
