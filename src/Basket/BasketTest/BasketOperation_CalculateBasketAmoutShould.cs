@@ -96,7 +96,7 @@ namespace BasketTest
         [DynamicData("Baskets")]
         public void ReturnCorrectAmoutGivenBasketBis(BasketTest basketTest)
         {
-            var basKetService = new BasketService();         
+            var basKetService = new BasketService();          
             var basketOperation = new BasketOperation(basKetService);      
             var amountTotal = basketOperation.CalculateAmout(basketTest.BasketLineArticles);      
             Assert.AreEqual(amountTotal, basketTest.ExpectedPrice);
